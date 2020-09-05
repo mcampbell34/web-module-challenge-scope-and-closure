@@ -82,10 +82,9 @@ function finalScore(inning,number){
 
   for (let i =0; i < number; i++){
 
-    let home += inning()
-    let away += inning()
+     home += inning()
+     away += inning()
   }
-  {
     return ({Home:home, Away:away})
   }
 
@@ -111,15 +110,15 @@ and returns the score at each pont in the game, like so:
 8th inning: awayTeam - homeTeam
 9th inning: awayTeam - homeTeam
 Final Score: awayTeam - homeTeam */
-
+/// add corrections for 1-3 (st,nd,rd) // 
 function scoreboard(finalScore, inning, numb) {
   let home = 0;
-  let away =0;
+  let away = 0;
   for(let i =1; i <= numb; i++){
     home += finalScore(inning, i ).Home;
-    away =+ finalScore(inning, i).Away;
+    away += finalScore(inning, i).Away;
       console.log(`${i}th inning: ${away} - ${home}`)
     }
   return `Final Score: ${away} - ${home}`
 }
-console.log(scoreboard(finalScore, inning, 10));
+console.log(scoreboard(finalScore, inning, 10))
