@@ -31,10 +31,10 @@ function processFirstItem(stringList, callback) {
  * 2. Which of the two uses a closure? How can you tell?
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * /// one is more secure /// counter2 is less secure
 */
 
-// counter1 code
+// counter1 code // more secure // 
 function counterMaker() {
   let count = 0;
   return function counter() {
@@ -44,7 +44,7 @@ function counterMaker() {
 
 const counter1 = counterMaker();
 
-// counter2 code
+// counter2 code // less secure // 
 let count = 0;
 
 function counter2() {
@@ -56,11 +56,11 @@ function counter2() {
 
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning() {
+  return Math.floor(Math.random() *3 );
 }
+console.log(inning()); 
+
 
 /* Task 3: finalScore()
 
@@ -76,11 +76,21 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning,number){
+  let home = 0;
+  let away = 0;
 
-  /*Code Here*/
+  for (let i =0; i < number; i++){
 
-}
+    let home += inning()
+    let away += inning()
+  }
+  {
+    return ({Home:home, Away:away})
+  }
+
+  console.log(finalScore(inning,9));
+
 
 /* Task 4: 
 
@@ -102,9 +112,14 @@ and returns the score at each pont in the game, like so:
 9th inning: awayTeam - homeTeam
 Final Score: awayTeam - homeTeam */
 
-
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(finalScore, inning, numb) {
+  let home = 0;
+  let away =0;
+  for(let i =1; i <= numb; i++){
+    home += finalScore(inning, i ).Home;
+    away =+ finalScore(inning, i).Away;
+      console.log(`${i}th inning: ${away} - ${home}`)
+    }
+  return `Final Score: ${away} - ${home}`
 }
-
-
+console.log(scoreboard(finalScore, inning, 10));
