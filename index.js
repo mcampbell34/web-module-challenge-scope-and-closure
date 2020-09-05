@@ -15,7 +15,7 @@
  * should return 'foofoo'.
 */
 function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
+  return callback(stringList[0]);
 }
 
 // ⭐️ Example Challenge END ⭐️
@@ -57,7 +57,7 @@ function counter2() {
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
 function inning() {
-  return Math.floor(Math.random() *3 );
+  return Math.floor(Math.random() * 3 );
 }
 console.log(inning()); 
 
